@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+Wildfire List React Application
+Description
+The Wildfire List React Application is a web-based tool that allows users to search for wildfire events that occurred in a specific month and year. It retrieves data from a designated API and presents the results in a tabular format.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Application Structure
+The application is organized into multiple files and components, each serving a specific purpose:
 
-## Available Scripts
+App.js
+The main entry point of the application that sets up the routing. It includes the WildfireList component.
 
-In the project directory, you can run:
+WildfireList.js
+The core component of the application responsible for rendering the user interface and handling user interactions. It allows users to select a specific month and year, fetch wildfire data from an API, and display the results in a table. It also handles loading indicators and error messages.
 
-### `npm start`
+dateUtils.js
+A utility module containing functions and variables related to date and month manipulation. It provides a mapping of full month names to abbreviations, the current year, and a range of available years for user selection.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ErrorPopup.js
+A reusable React component responsible for displaying error messages to the user in a pop-up or modal dialog. It can be utilized to inform the user about errors that may occur during data retrieval.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Getting Started
+To run this application locally, follow these steps:
 
-### `npm test`
+Clone this repository to your local machine.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Install the required dependencies:
+npm install
 
-### `npm run build`
+Create a .env file at the root of the project and set the REACT_APP_WILDFIRE_API_URL variable to the URL of the Wildfire API you intend to use.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Start the development server:
+npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Open a web browser and navigate to http://localhost:3000/wildfires to use the Wildfire List Application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Usage
+Select a month and year from the dropdown menus.
+The application will display a loading message while it fetches the data.
+Once the data is retrieved, wildfire events that match the selected criteria are displayed in a table.
+If no results are found, an "Oh No!" message is displayed.
+In case of an error during data retrieval, an error message is shown.
 
-### `npm run eject`
+Environment Configuration
+The application relies on specific environment variables defined in the .env file:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+REACT_APP_WILDFIRE_API_URL: Specifies the URL of the Wildfire API.
+PORT: Defines the local development server port.
+Please ensure that these settings are correctly configured in the .env file.
